@@ -51,6 +51,9 @@ Before executing the phases below, ask the user for confirmation that the projec
    - Execute `cargo install cargo-audit` for Security audits
    - Execute `cargo install cargo-outdated` for Dependency updates
 
+4. Create a simple `.env` file containing just one variable definition `RUST_LOG=debug`
+
 ### Phase 3: Update the README.md
 
 1. Add a project specific section that tell the use what the project is about
+2. Remove the `Quick Start` section
