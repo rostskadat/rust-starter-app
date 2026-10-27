@@ -13,4 +13,5 @@ tmux split-window -v
 # Send the relevant commands
 tmux send-keys -t "${session_name}:${window_name}.0" '/usr/local/bin/opencode-cli' C-m
 tmux send-keys -t "${session_name}:${window_name}.1" 'cargo watch' C-m
+tmux select-pane -t "${session_name}:${window_name}.0"
 tmux attach-session -t ${session_name}
