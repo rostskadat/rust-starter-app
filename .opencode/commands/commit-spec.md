@@ -1,3 +1,9 @@
+---
+description: Create a git commit after implementing a specification
+agent: build
+subagent: true
+---
+
 # /commit-spec
 
 Create a git commit after implementing a specification. This command handles the git workflow for committing spec implementations with proper commit messages and verification.

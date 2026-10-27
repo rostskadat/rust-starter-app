@@ -1,3 +1,8 @@
+---
+description: Analyze the codebase for technical debt and perform comprehensive cleanup including code organization improvements, dead code removal, dependency optimization, and structural refactoring
+agent: build
+---
+
 # /cleanup-tech-debt
 
 Analyze the codebase for technical debt and perform comprehensive cleanup including code organization improvements, dead code removal, dependency optimization, and structural refactoring. This command systematically identifies and resolves technical debt to improve maintainability and code quality.
@@ -150,11 +155,11 @@ SCOPE: $ARGUMENTS (optional - specify scope like "internal/camera", "ui", "tests
    - Create atomic commits for each cleanup category
    - Use descriptive commit messages
    - Include test results in commit messages
-   - Add Claude Code attribution
+   - Add Agent attribution
 
 ## Example Usage
 
-```
+```text
 /cleanup-tech-debt
 /cleanup-tech-debt "internal/camera"
 /cleanup-tech-debt "ui"
@@ -165,6 +170,7 @@ SCOPE: $ARGUMENTS (optional - specify scope like "internal/camera", "ui", "tests
 ## Cleanup Categories
 
 ### Code Organization
+
 - Move files to appropriate packages
 - Rename files for consistency
 - Fix package import structures

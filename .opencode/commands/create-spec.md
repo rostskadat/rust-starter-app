@@ -1,6 +1,11 @@
+---
+description: Create a detailed specification file for a new feature or improvement
+agent: build
+---
+
 # /create-spec
 
-Create a detailed specification file for a new feature or improvement. This command generates comprehensive specs in the /specs directory following the project's conventions and guidelines to ensure Claude Code can implement the feature effectively.
+Create a detailed specification file for a new feature or improvement. This command generates comprehensive specs in the /specs directory following the project's conventions and guidelines to ensure Agent Coding Assistant can implement the feature effectively.
 
 ## Variables
 
@@ -137,7 +142,7 @@ Create a comprehensive specification file at `/specs/{number}-{feature-name}.md`
 
 3. Commit the changes:
    - Use proper commit message format
-   - Include Claude Code attribution
+   - Include Agent Coding Assistant attribution
    - Make sure both files are included in the commit
 
 ## Example Usage
@@ -164,7 +169,7 @@ The command will create:
 
 3. Create a git commit with both files:
    - Commit message: `add spec {number}: {feature-title}`
-   - Include Claude Code attribution
+   - Include Agent Coding Assistant attribution
    - Both spec file and status file in the commit
 
 ## Integration with Other Commands
@@ -176,7 +181,7 @@ The command will create:
 ## Quality Standards
 
 The generated spec must be:
-- Detailed enough for Claude Code to implement without ambiguity
+- Detailed enough for Agent Coding Assistant to implement without ambiguity
 - Following Go idioms and project conventions
 - Compatible with existing codebase architecture
 - Testable and maintainable

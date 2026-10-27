@@ -1,11 +1,18 @@
+---
+description: Runs comprehensive debugging analysis for the Gazelle eye tracking project, including tests, builds, and intelligent error analysis optimized for Agent Coding Assistant workflows
+agent: build
+---
+
 # Debug Command
 
-Runs comprehensive debugging analysis for the Gazelle eye tracking project, including tests, builds, and intelligent error analysis optimized for Claude Code workflows.
+Runs comprehensive debugging analysis for the Gazelle eye tracking project, including tests, builds, and intelligent error analysis optimized for Agent Coding Assistant workflows.
 
 ## Usage
+
 This command performs automated debugging and provides structured error analysis for rapid issue resolution.
 
 ## Core Analysis Steps
+
 1. **Test Execution**: Comprehensive test suite with race detection and coverage
 2. **Build Verification**: Main prototype and all test applications
 3. **Static Analysis**: Code formatting, linting, and quality checks
@@ -13,6 +20,7 @@ This command performs automated debugging and provides structured error analysis
 5. **Dependency Validation**: Go module integrity and OpenCV prerequisites
 
 ## Test Execution Strategy
+
 ```bash
 # Progressive test execution with detailed output
 just test          # Basic unit tests with verbose output
@@ -21,6 +29,7 @@ just test-cover    # Coverage analysis with threshold reporting
 ```
 
 ## Build Verification Pipeline
+
 ```bash
 # Core prototype and test applications
 just build         # Main gazelle-prototype executable
@@ -30,6 +39,7 @@ go mod verify      # Module integrity check
 ```
 
 ## Code Quality Analysis
+
 ```bash
 # Automated formatting and linting
 just fmt           # goimports + go fmt with project-wide application
@@ -37,15 +47,17 @@ just lint          # golangci-lint with Gazelle-specific rules
 ```
 
 ## Complete CI Pipeline
+
 ```bash
 # Full continuous integration workflow
 just ci            # Sequential: fmt → lint → test → test-race
 ```
 
-## Advanced Error Analysis & Claude Code Integration
+## Advanced Error Analysis & Agent Coding Assistant Integration
 
 ### Intelligent Error Detection
-The debug command provides structured error analysis optimized for Claude Code workflows:
+
+The debug command provides structured error analysis optimized for Agent Coding Assistant workflows:
 
 1. **Context-Aware Pattern Recognition**:
    - **Race Conditions**: Detects unsafe UI operations, missing `fyne.Do()` calls
@@ -61,13 +73,14 @@ The debug command provides structured error analysis optimized for Claude Code w
    - **System Integration**: robotgo cursor control, platform-specific permissions
    - **Performance**: Memory leaks in video processing, frame rate optimization
 
-3. **Claude Code Optimized Diagnostics**:
+3. **Agent Coding Assistant Optimized Diagnostics**:
    - **File Location**: Precise `file_path:line_number` references for easy navigation
    - **Search Patterns**: Provides `rg` commands for investigating related code
    - **Fix Suggestions**: Actionable code changes with context
    - **Test Recommendations**: Specific test cases to verify fixes
 
 ### Automated Recovery Actions
+
 ```bash
 # Safe automatic fixes applied in sequence
 just deps          # Go module cleanup: download + tidy
@@ -78,8 +91,8 @@ just check-prereqs # OpenCV and cascade file verification
 
 ## Example Debug Session Output
 
-```
-🔍 Gazelle Debug Analysis - Claude Code Optimized
+```text
+🔍 Gazelle Debug Analysis - Agent Coding Assistant Optimized
 
 === BUILD VERIFICATION ===
 ✅ just build: gazelle-prototype built successfully
@@ -121,7 +134,7 @@ just check-prereqs # OpenCV and cascade file verification
 ✅ go mod verify: Module integrity confirmed
 ✅ just check-prereqs: OpenCV cascades verified
 
-🎯 CLAUDE CODE ACTIONS
+🎯 Agent Coding Assistant ACTIONS
 1. Edit internal/ui/calibration_window.go:45 - Add fyne.Do() wrapper
 2. Edit internal/eyetracking/detector.go:123 - Remove unused variable  
 3. Edit cmd/integrated-ui-test/main.go:67 - Add nil check
@@ -138,19 +151,22 @@ just check-prereqs # OpenCV and cascade file verification
 ## Gazelle-Specific Intelligence
 
 ### Eye Tracking Domain Expertise
+
 - **Camera Integration**: Validates OpenCV camera device access and cascade loading
 - **UI Thread Safety**: Detects Fyne widget access violations and missing `fyne.Do()` calls  
 - **Calibration Logic**: Verifies eye tracking calibration data and algorithm convergence
 - **System Permissions**: Checks macOS camera/accessibility permissions for robotgo
 - **Performance Patterns**: Identifies memory leaks in video frame processing loops
 
-### Claude Code Workflow Optimization
+### Agent Coding Assistant Workflow Optimization
+
 - **Precise Navigation**: `file_path:line_number` format for instant IDE navigation
 - **Search Integration**: Ready-to-use `rg` commands for code investigation
 - **Batch Operations**: Parallelizable fix suggestions for efficient execution
 - **Context Preservation**: Maintains error context across multiple debugging iterations
 
 ### Justfile Command Alignment
+
 All commands verified against current `justfile` structure:
 - ✅ `just build` → `bin/gazelle-prototype` 
 - ✅ `just test-apps` → All 6 cmd/* applications
@@ -161,6 +177,7 @@ All commands verified against current `justfile` structure:
 ## Prerequisites & Dependencies
 
 ### Required Tools
+
 ```bash
 # Core Go toolchain
 go version          # Go 1.19+ required
@@ -171,7 +188,8 @@ golangci-lint --version    # Static analysis
 goimports --version        # Import formatting
 ```
 
-### Project Dependencies  
+### Project Dependencies
+
 ```bash
 # Computer vision and UI
 github.com/hybridgroup/gocv  # OpenCV bindings
@@ -184,6 +202,7 @@ github.com/stretchr/testify  # Testing framework
 ```
 
 ### System Requirements
+
 ```bash
 # macOS specific
 brew install opencv pkg-config  # OpenCV + pkg-config

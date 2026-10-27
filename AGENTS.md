@@ -1,12 +1,13 @@
-# Claude Code Generation Guidelines for Rust Projects
+# Agent Generation Guidelines for Rust Projects
 
 ## Project Overview
 
-This template provides a foundation for developing Rust applications with Claude Code assistance. It includes best practices for project structure, code organization, testing, and documentation that align with Rust idioms and ecosystem conventions.
+This template provides a foundation for developing Rust applications with an Agent Code assistant. It includes best practices for project structure, code organization, testing, and documentation that align with Rust idioms and ecosystem conventions.
 
 ## Core Architecture Principles
 
 ### 1. Error Handling & Resource Management
+
 - **Use Result types**: Prefer `Result<T, E>` over panics for recoverable errors
 - **Explicit error handling**: Use `?` operator and proper error propagation
 - **RAII pattern**: Rust's ownership system handles resource cleanup automatically
@@ -26,6 +27,7 @@ fn process_file(path: &str) -> Result<String> {
 ```
 
 ### 2. Concurrency & Thread Safety
+
 - **Ownership model**: Leverage Rust's ownership system for thread safety
 - **Async/await**: Use `tokio` for asynchronous programming
 - **Channel communication**: Use `mpsc` channels for thread communication
@@ -43,6 +45,7 @@ async fn fetch_data(url: &str) -> Result<String> {
 ```
 
 ### 3. Configuration & Dependency Injection
+
 - **Serde configuration**: Use `serde` for serialization/deserialization
 - **Environment variables**: Use `dotenvy` for environment configuration
 - **Dependency injection**: Pass dependencies explicitly through constructors
@@ -51,9 +54,10 @@ async fn fetch_data(url: &str) -> Result<String> {
 ## File and Directory Structure
 
 ### Standard Layout
-```
+
+```text
 rust-project/
-├── src/                    # Source code
+├── src/                   # Source code
 │   ├── main.rs            # Binary entry point
 │   ├── lib.rs             # Library entry point
 │   ├── bin/               # Additional binary targets
@@ -74,6 +78,7 @@ rust-project/
 ```
 
 ### File Naming Conventions
+
 - **Rust files**: Use snake_case (e.g., `user_service.rs`, `auth_handler.rs`)
 - **Test files**: Integration tests in `tests/` directory
 - **Module files**: `mod.rs` for module declarations
@@ -82,6 +87,7 @@ rust-project/
 ## Code Style & Standards
 
 ### Documentation
+
 - **Rustdoc comments**: Use `///` for public API documentation
 - **Module documentation**: Document modules with `//!` at the top
 - **Examples**: Include code examples in documentation
@@ -111,6 +117,7 @@ pub fn authenticate(username: &str, password: &str) -> Result<User, AuthError> {
 ```
 
 ### Logging Standards
+
 - **Structured logging**: Use `tracing` for structured logging
 - **Log levels**: Use appropriate levels (trace, debug, info, warn, error)
 - **Contextual logging**: Include relevant context with spans
@@ -137,6 +144,7 @@ async fn process_request(request_id: u64) -> Result<Response> {
 ```
 
 ### Testing Requirements
+
 - **Unit tests**: Include `#[cfg(test)]` modules in source files
 - **Integration tests**: Place in `tests/` directory
 - **Property testing**: Use `proptest` for property-based testing
@@ -168,6 +176,7 @@ mod tests {
 ## Platform-Specific Considerations
 
 ### Cross-Platform Compatibility
+
 - **Conditional compilation**: Use `cfg` attributes for platform-specific code
 - **Path handling**: Use `std::path::Path` for cross-platform path operations
 - **Feature detection**: Use `cfg!` macro for runtime feature detection
@@ -187,6 +196,7 @@ fn platform_specific_function() {
 ## Common Patterns & Anti-Patterns
 
 ### Do's
+
 - ✅ Use `Result<T, E>` for error handling
 - ✅ Leverage ownership and borrowing for memory safety
 - ✅ Use iterators instead of manual loops
@@ -197,6 +207,7 @@ fn platform_specific_function() {
 - ✅ Follow Rust naming conventions
 
 ### Don'ts
+
 - ❌ Don't use `unwrap()` in production code
 - ❌ Don't use `panic!` for normal error flow
 - ❌ Don't ignore compiler warnings
@@ -208,6 +219,7 @@ fn platform_specific_function() {
 ## Development Workflow
 
 ### Feature Development
+
 1. **Design API**: Define public interfaces and types first
 2. **Write tests**: Write failing tests before implementation
 3. **Implement incrementally**: Build in small, testable increments
@@ -215,6 +227,7 @@ fn platform_specific_function() {
 5. **Commit atomically**: Make small, focused commits
 
 ### Code Review Checklist
+
 - [ ] Follows Rust idioms and conventions
 - [ ] Proper error handling with `Result` types
 - [ ] Comprehensive test coverage
@@ -227,12 +240,14 @@ fn platform_specific_function() {
 ## Performance Considerations
 
 ### Memory Management
+
 - **Zero-cost abstractions**: Leverage Rust's zero-cost abstractions
 - **Avoid unnecessary allocations**: Use string slices over owned strings when possible
 - **Iterator chains**: Use iterator adaptors for efficient data processing
 - **Profiling**: Use `perf` and `flamegraph` for performance analysis
 
 ### Async Performance
+
 - **Async runtime**: Choose appropriate async runtime (tokio, async-std)
 - **Concurrent operations**: Use `join!` and `select!` for concurrency
 - **Buffering**: Use appropriate buffer sizes for I/O operations
@@ -241,12 +256,14 @@ fn platform_specific_function() {
 ## Security & Privacy
 
 ### Data Handling
+
 - **Input validation**: Validate all external inputs
 - **Sanitization**: Sanitize data before processing
 - **Secure defaults**: Use secure defaults for configurations
 - **Secrets management**: Never hardcode secrets in source code
 
 ### Memory Safety
+
 - **Ownership system**: Rust's ownership prevents many security issues
 - **Bounds checking**: Array bounds are checked at runtime
 - **Type safety**: Use strong typing to prevent logic errors
@@ -255,12 +272,14 @@ fn platform_specific_function() {
 ## Tooling & Development Environment
 
 ### Essential Tools
+
 - **Rustfmt**: Code formatting with `cargo fmt`
 - **Clippy**: Linting with `cargo clippy`
 - **Cargo**: Build system and package manager
 - **Rust analyzer**: IDE integration for better development experience
 
 ### Code Search & Analysis
+
 - **Ripgrep**: Fast text search with `rg`
   - `rg "pattern"` for basic search
   - `rg -t rust "pattern"` to search only Rust files
@@ -268,6 +287,7 @@ fn platform_specific_function() {
 - **IDE integration**: Configure your editor for Rust development
 
 ### Testing Tools
+
 - **Cargo test**: Built-in test runner
 - **Tarpaulin**: Code coverage analysis
 - **Criterion**: Benchmarking framework
@@ -276,6 +296,7 @@ fn platform_specific_function() {
 ## Common Dependencies
 
 ### Core Libraries
+
 - **serde**: Serialization/deserialization
 - **tokio**: Async runtime
 - **anyhow/thiserror**: Error handling
@@ -283,36 +304,41 @@ fn platform_specific_function() {
 - **clap**: Command-line argument parsing
 
 ### Testing Libraries
+
 - **proptest**: Property-based testing
 - **mockall**: Mocking framework
 - **criterion**: Benchmarking
 - **tempfile**: Temporary file handling in tests
 
-## Example Prompts for Claude
+## Example Prompts for your agent
 
 ### Implementing New Features
-```
+
+```text
 Implement a REST API client for the GitHub API using reqwest and serde. 
 Include proper error handling, rate limiting, and comprehensive tests. 
 Add documentation with examples and integrate with the existing project structure.
 ```
 
 ### Fixing Issues
-```
+
+```text
 Fix the lifetime issue in the parser module where the returned references 
 don't live long enough. The compiler error is in src/parser.rs:42. 
 Ensure proper lifetime annotations and consider using owned types where necessary.
 ```
 
 ### Refactoring
-```
+
+```text
 Refactor the database module to use async/await pattern with tokio. 
 Convert the blocking database calls to async versions and update 
 all callers accordingly. Maintain backward compatibility where possible.
 ```
 
 ### Performance Optimization
-```
+
+```text
 Optimize the image processing pipeline for better performance. 
 Profile the current implementation and identify bottlenecks. 
 Consider using SIMD operations or parallel processing with rayon.
@@ -320,4 +346,4 @@ Consider using SIMD operations or parallel processing with rayon.
 
 ---
 
-This guidance ensures Claude generates idiomatic, safe, and performant Rust code that follows community best practices and modern Rust development patterns.
+This guidance ensures your agent generates idiomatic, safe, and performant Rust code that follows community best practices and modern Rust development patterns.

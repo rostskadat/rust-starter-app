@@ -1,10 +1,17 @@
+---
+description: Implement a specification document from the `specs/` directory into working code
+agent: build
+---
+
 # Implement Specification
 
 ## Purpose
+
 Implement a specification document from the `specs/` directory into working code.
 
 ## Usage
-```
+
+```text
 /implement-spec <spec-id>
 ```
 
@@ -31,7 +38,9 @@ Implement a specification document from the `specs/` directory into working code
 - **Use existing patterns** - follow the same coding style and structure as the rest of the codebase
 
 ## Example
-```
+
+```text
 /implement-spec 110
 ```
-This would implement the calibration improvements specification (specs/110-calibration-improvements.md). 
+
+This would implement the calibration improvements specification (specs/110-calibration-improvements.md).

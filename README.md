@@ -1,26 +1,29 @@
-# Rust Claude Code Starter Template
+# Rust Agent Coding Assistant Starter Template
 
-A comprehensive starter template for Rust projects optimized for development with Claude Code. This template provides a solid foundation with best practices, tooling configurations, and development guidelines for building robust Rust applications.
+A comprehensive starter template for Rust projects optimized for development with Agent Coding Assistant. This template provides a solid foundation with best practices, tooling configurations, and development guidelines for building robust Rust applications.
 
 ## 🚀 Quick Start
 
 1. **Clone this template**
+
    ```bash
-   git clone https://github.com/iepathos/rust-claude-code.git my-rust-project
+   git clone https://github.com/rostskadat/rust-starter-app.git my-rust-project
    cd my-rust-project
    ```
 
 2. **Initialize your project**
+
    ```bash
    # Remove template git history
    rm -rf .git
    git init
    
    # Create initial Cargo.toml
-   cargo init --name my-project
+   cargo init --name $(basename $(pwd))
    ```
 
 3. **Install development dependencies**
+
    ```bash
    # Install rustfmt and clippy
    rustup component add rustfmt clippy
@@ -36,9 +39,9 @@ A comprehensive starter template for Rust projects optimized for development wit
 
 ## 📁 Project Structure
 
-```
-my-rust-project/
-├── src/                    # Source code
+```text
+rust-project/
+├── src/                   # Source code
 │   ├── main.rs            # Binary entry point
 │   ├── lib.rs             # Library entry point
 │   └── modules/           # Application modules
@@ -47,7 +50,7 @@ my-rust-project/
 ├── examples/              # Usage examples
 ├── docs/                  # Documentation
 ├── .gitignore             # Git ignore rules
-├── CLAUDE.md              # Claude Code guidelines
+├── AGENTS.md              # Agents guidelines
 ├── Cargo.toml             # Project manifest
 └── README.md              # This file
 ```
@@ -55,6 +58,7 @@ my-rust-project/
 ## 🛠️ Development Workflow
 
 ### Running the project
+
 ```bash
 # Build and run
 cargo run
@@ -70,6 +74,7 @@ cargo run --all-features
 ```
 
 ### Code Quality
+
 ```bash
 # Format code
 cargo fmt
@@ -85,6 +90,7 @@ cargo audit
 ```
 
 ### Testing
+
 ```bash
 # Run all tests
 cargo test
@@ -99,9 +105,9 @@ cargo test test_name
 cargo tarpaulin --out Html
 ```
 
-## 🤖 Claude Code Integration
+## 🤖 Agent Coding Assistant Integration
 
-This template includes a comprehensive `CLAUDE.md` file that provides:
+This template includes a comprehensive `AGENTS.md` file that provides:
 
 - **Architecture guidelines**: Error handling, concurrency patterns, and configuration management
 - **Code style standards**: Documentation, logging, and testing requirements
@@ -230,8 +236,12 @@ This template is provided as-is for use in your own projects. Customize the lice
 
 1. **Customize `Cargo.toml`** with your project details
 2. **Update this README** with project-specific information
-3. **Review `CLAUDE.md`** for development guidelines
+3. **Review `AGENTS.md`** for development guidelines
 4. **Set up CI/CD** with GitHub Actions or similar
 5. **Start building** your Rust application!
 
-Happy coding with Rust and Claude! 🦀🤖
+Happy coding with Rust! 🦀🤖
+
+## TMUX environment
+
+Just execute the `start_tmux.sh` to start the tmux environment.

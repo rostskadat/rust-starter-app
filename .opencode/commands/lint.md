@@ -1,3 +1,9 @@
+---
+description: Automatically detect and fix linting issues in the Rust codebase using cargo clippy and rustfmt
+agent: build
+subagent: true
+---
+
 # /lint
 
 Automatically detect and fix linting issues in the Rust codebase using cargo clippy and rustfmt. This command ensures code quality and consistency by addressing compiler warnings, clippy lints, and formatting issues.

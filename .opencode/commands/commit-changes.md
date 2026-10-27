@@ -1,3 +1,9 @@
+---
+description: Create a git commit for general changes, fixes, or improvements that weren't part of a specific specification
+agent: build
+subagent: true
+---
+
 # /commit-changes
 
 Create a git commit for general changes, fixes, or improvements that weren't part of a specific specification. This command handles the git workflow for committing ad-hoc changes with proper commit messages and verification.

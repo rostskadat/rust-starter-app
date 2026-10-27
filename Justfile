@@ -1,4 +1,4 @@
-# Rust Claude Code Template - Justfile
+# Rust Agent Coding Assistant Template - Justfile
 # Quick development commands for Rust projects
 
 # Default recipe - show available commands
